@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package>
+    <name>Made_Cache</name>
+    <version>1.4.2</version>
+    <stability>stable</stability>
+    <license>4-clause BSD License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Advanced non-intrusive Block Cache module that enhances performance by implementing arbitrary block cache with support for Varnish ESI tags.</summary>
+    <description>Few know that Magento out of the box doesn't actually cache anything other than the Navigation and Footer blocks, which are basically static as it is.&#xD;
+&#xD;
+This module enhances performance by allowing developers to cache any block they want via simple layout xml changes - per layout handle.&#xD;
+&#xD;
+There is also support for disabling cache for specific handles such as checkout, etc, where you don't want to load the main content block from cache.&#xD;
+&#xD;
+ESI is supported in conjunction with Phoenix_VarnishCache, and allows for super-fast page views. Check out layout/madecache.xml for examples.&#xD;
+&#xD;
+A good block cache is vital for scaling a site, be sure to implement it before residing to full page cache.</description>
+    <notes>N/A</notes>
+    <authors><author><name>Jonathan Selander</name><user>jonathan_made</user><email>info@madepeople.se</email></author></authors>
+    <date>2012-11-22</date>
+    <time>18:14:36</time>
+    <contents><target name="magecommunity"><dir name="Made"><dir name="Cache"><dir name="Block"><dir name="Catalog"><dir name="Product"><dir name="List"><file name="Product.php" hash="6356fde9c5acf5f0a96851e780a691b1"/></dir><file name="List.php" hash="bb1e30501c95e83901de75bcb780d072"/></dir></dir><file name="Messages.php" hash="6d7eaed6a93c0deb6037ea36e88ec62f"/><file name="Profiler.php" hash="7d1fd856f08a1900b15a72ae46eb143d"/><dir name="Varnish"><file name="Footer.php" hash="4da9584f4cf4b70149b5c48f9657f668"/></dir></dir><dir name="Helper"><file name="Data.php" hash="6ea193010f6bf79c0c92f06d15e8d73b"/><file name="Varnish.php" hash="5a96d2731d02dc8b7e311b6fd9e276f7"/></dir><dir name="Model"><file name="Layout.php" hash="d77634d026ebc8e228d3c80b7c5caff7"/><dir name="Observer"><file name="Abstract.php" hash="e9f870d8766e1b2e5c6c091052565731"/><file name="Catalog.php" hash="39e069dd45ef75d2ab5b00c708181567"/><file name="Checkout.php" hash="4f6cc6aa7b2466976cad6c25f6a466e5"/><file name="Cms.php" hash="7bac2c6d57d3ff85d397c7cc1867c323"/></dir><file name="Observer.php" hash="8e641fbc376853a6237e0271288b0e4a"/><file name="Profiler.php" hash="888d3e38e212d872a4420a3556ca4b08"/><file name="VarnishObserver.php" hash="05001405131288db87b2abbe70a780b0"/></dir><dir name="controllers"><file name="VarnishController.php" hash="507120591d2e0ad6b33e7816f2c654cd"/></dir><dir name="etc"><file name="config.xml" hash="4ebff803771d6609ac0574aaa864bf59"/><file name="magento.vcl" hash="a247cd54d96f824bacacda6704ad5285"/><file name="system.xml" hash="4ffc1ded6a50a61aeaf932c5a3556a28"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Made_Cache.xml" hash="4cf53cc9b4e525eb560f7fe1278d96bd"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="madecache.xml" hash="7651f67cbe8ee0cd36519684ac74e68f"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

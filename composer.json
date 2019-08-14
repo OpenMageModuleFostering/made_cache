@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Made_Cache",
+    "type": "magento-module",
+    "license": "4-clause-BSD-License",
+    "homepage": "",
+    "description": "Advanced non-intrusive Block Cache module that enhances performance by implementing arbitrary block cache with support for Varnish ESI tags.",
+    "authors": [
+    {
+        "name": "Jonathan Selander",
+        "email": "info@madepeople.se"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
