@@ -12,19 +12,26 @@ abstract class Made_Cache_Model_Observer_Abstract
      * @see Mage_Core_Block_Abstract
      * @return string
      */
-    protected function _getCacheKey(array $keyInfo)
+    protected function _getCacheKey(array $keyInfo, Mage_Core_Block_Abstract $block = null)
     {
-        $keyInfo = array_values($keyInfo);  // ignore array keys
+        if ($block !== null) {
+            $cacheKey = $block->getData('cache_key');
+            if (!empty($cacheKey)) {
+                $keyInfo = array($cacheKey);
+            } else {
+                $keyInfo = array_values($keyInfo);
+            }
+        }
         $key = implode('|', $keyInfo);
         $key = sha1($key);
         return $key;
     }
-  
+
     /**
      * Get generic key array including handle etc, that all blocks use
-     * 
+     *
      * @param Mage_Core_Block_Abstract $block
-     * @return array 
+     * @return array
      */
     protected function _getBasicKeys(Mage_Core_Block_Abstract $block)
     {
@@ -32,9 +39,15 @@ abstract class Made_Cache_Model_Observer_Abstract
         if (!is_array($keys)) {
             $keys = array();
         }
+
+        $keys[] = Mage::getSingleton('customer/session')->getCustomer()
+                ->getGroupId();
+
+        $keys[] = Mage::app()->getStore()->getCurrentCurrencyCode();
         $keys[] = $block->getLayout()->getUpdate()->getCacheId();
         $keys[] = 'SSL_' . intval(!empty($_SERVER['HTTPS']) &&
                 $_SERVER['HTTPS'] !== 'off') . '_';
+
         return $keys;
     }
 }
